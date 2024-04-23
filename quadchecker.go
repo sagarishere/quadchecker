@@ -42,8 +42,8 @@ func getDimensions(str string) (x, y int, err error) {
 	if strings.Contains(lines[0], " ") {
 		return 0, 0, QuadError("Invalid character")
 	}
-	for _, line := range lines {
-		if len(lines[0]) != len(line) {
+	for _, line := range lines[1:] {
+		if len(line) != len(lines[0]) {
 			return 0, 0, QuadError("Different lengths")
 		}
 	}

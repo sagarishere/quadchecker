@@ -12,6 +12,6 @@ func QuadD(x, y int) {
 }
 
 func main() {
-	x, y := q.ProcessArgs()
+	x, y := q.ProcessArgs(os.Args)
 	QuadD(x, y)
 }

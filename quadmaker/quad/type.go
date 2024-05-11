@@ -1,8 +1,8 @@
 package quad
 
 type Quad struct {
-	leftCorner          string
-	rightCorner         string
+	leftTopCorner       string
+	rightTopCorner      string
 	leftBottomCorner    string
 	rightBottomCorner   string
 	topBottomRowFill    string
@@ -10,10 +10,10 @@ type Quad struct {
 	middleOfQuadFill    string
 }
 
-func NewQuad(leftCorner, rightCorner, leftBottomCorner, rightBottomCorner, topBottomRowFill, leftRightColumnFill, middleOfQuadFill string) *Quad {
+func NewQuad(leftTopCorner, rightTopCorner, leftBottomCorner, rightBottomCorner, topBottomRowFill, leftRightColumnFill, middleOfQuadFill string) *Quad {
 	return &Quad{
-		leftCorner,
-		rightCorner,
+		leftTopCorner,
+		rightTopCorner,
 		leftBottomCorner,
 		rightBottomCorner,
 		topBottomRowFill,

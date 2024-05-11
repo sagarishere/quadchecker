@@ -19,9 +19,9 @@ func GenerateQuad(x, y int, q Quad) string {
 		for column := 1; column <= x; column++ {
 			switch {
 			case row == 1 && column == 1: // Top-left corner
-				currentRow.WriteString(q.leftCorner)
+				currentRow.WriteString(q.leftTopCorner)
 			case row == 1 && column == x: // Top-right corner
-				currentRow.WriteString(q.rightCorner)
+				currentRow.WriteString(q.rightTopCorner)
 			case row == y && column == 1: // Bottom-left corner
 				currentRow.WriteString(q.leftBottomCorner)
 			case row == y && column == x: // Bottom-right corner
@@ -40,18 +40,18 @@ func GenerateQuad(x, y int, q Quad) string {
 	return strings.Join(rows, "\n") + "\n"
 }
 
-func ProcessArgs() (x, y int) {
-	if len(os.Args) != 3 {
+func ProcessArgs(args []string) (x, y int) {
+	if len(args) != 3 {
 		printUsage()
 		os.Exit(1)
 	}
-	x, err := strconv.Atoi(os.Args[1])
+	x, err := strconv.Atoi(args[1])
 	if err != nil {
 		println(err)
 		printUsage()
 		os.Exit(1)
 	}
-	y, err = strconv.Atoi(os.Args[2])
+	y, err = strconv.Atoi(args[2])
 	if err != nil {
 		println(err)
 		printUsage()
